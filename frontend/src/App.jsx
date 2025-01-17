@@ -16,7 +16,7 @@ const App = () => {
                 
                 <Dropdown  items={tempArr} selected={'java'} disabled={false}/>
                 <Dropdown  items={tempArr} selected={'java'} disabled={true}/>
-                <Dropdown  items={tempArr1} initial={'select please'} disabled={false}/>
+                <Dropdown  items={tempArr1} selected={'question-1'} disabled={false}/>
             </div>
         </Provider>
     )
