@@ -6,10 +6,7 @@ import { store } from './redux/store'
 const App = () => {
     return (
         <Provider store={store}>
-            <div>
-                <h1 className='text-dar text-slate-600 font-inter'>Testing</h1>
-                
-            </div>
+            
         </Provider>
     )
 }
