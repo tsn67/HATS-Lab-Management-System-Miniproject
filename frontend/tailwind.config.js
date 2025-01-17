@@ -18,10 +18,11 @@ export default {
         secondaryGray: '#333333',
         darkGray: '#262626',
       },
-      fontFamily: {
-        inter: "Inter", serif
-      }
+      
     },
+    fontFamily: {
+      'inter': ["Inter"]
+    }
   },
   plugins: [],
 }
