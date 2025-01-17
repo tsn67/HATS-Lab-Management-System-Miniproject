@@ -2,13 +2,13 @@ import React from 'react';
 import Button from './Button';
 import DropDown from './DropDown'
 
-const QuestionBar = ({ questionDetails, dropDown }) => {
+const QuestionBar = ({ questionDetails }) => {
     return (
-        <div  className="bg-darkGray text-white max-w-2xl h-auto border-2 border-darkGray ">
+        <div  className="bg-darkGray text-white max-w-2xl h-screengit border-2 border-darkGray overflow-y-auto">
             {/* Header */}
             <div className="flex justify-between items-center mb-4 bg-secondaryGray h-11">
-                <Button/>
-                <DropDown />
+                <Button label='question'/>
+                <DropDown selected='Question1' items={['Question1', 'Question2']} disabled={false} />
             </div>
 
             <div className='m-6'>
