@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import Button from './Button.jsx';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {motion} from 'framer-motion';
+import classNames from 'classnames';
 
 const Dropdown = ({initial, items, selected, disabled, DropdownIcon, extraStyles, action}) => {
     
@@ -28,11 +29,15 @@ const Dropdown = ({initial, items, selected, disabled, DropdownIcon, extraStyles
         };
     }, []);
 
+    var stringSelectedItem = 'text-white';
+    var stringNonSelectedItem = 'text-textGray';
 
     function getItem(text, index) {
-    return <div onClick={() => {setSelectedItem(text); setOpen(false); action(text)}} className='hover:bg-secondaryGray cursor-pointer h-[30px] box-border w-[100%] mx-[2px] bg-buttonGray px-[4px] flex flex-row justify-between items-center rounded-[4px]'>
-            <p key={index} className={`${selected == text?' text-white ': 'text-textGray'}`}>{text}</p>
-            <div className={'w-[4px] h-[4px] rounded-full mr-[4px] '+`${text == selected?"bg-textGreen":"bg-textGray"}`}></div>
+    return <div onClick={() => {setSelectedItem(text); setOpen(false); if(action) {action(text)};}} className='hover:bg-secondaryGray cursor-pointer h-[30px] box-border w-[100%] mx-[2px] bg-buttonGray px-[4px] flex flex-row justify-between items-center rounded-[4px]'>
+            
+            <p key={index} className={classNames(text == selectedItem ? 'text-white': 'text-textGray')}>{text}</p>
+
+            <div className={classNames('rounded-full h-[4px] w-[4px] bg-textGray ',{'bg-textGreen':(selectedItem == text)})}></div>
         </div>
     }
 
