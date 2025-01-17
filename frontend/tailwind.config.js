@@ -17,9 +17,12 @@ export default {
         buttonGray: '#403E3E',
         secondaryGray: '#333333',
         darkGray: '#262626',
-        
-      }
+      },
+      
     },
+    fontFamily: {
+      'inter': ["Inter"]
+    }
   },
   plugins: [],
 }
